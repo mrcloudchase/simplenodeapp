@@ -11,7 +11,9 @@ jobs:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
         node: [10, 12, 14]
-        
+        exclude:
+          - os: macos-latest
+            node: 10        
     steps:
       - uses: actions/checkout@v2
       - name: Use node.js ${{ matrix.node }}
